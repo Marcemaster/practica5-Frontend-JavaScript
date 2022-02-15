@@ -14,6 +14,6 @@ document.addEventListener("DOMContentLoeaded", () => {
     const anuncioId = searchParams.get("id");
   
     const detalleAnuncioController = new DetalleAnuncioController(detalleAnuncioElement);
-    detalleAnuncioController.showTweet(anuncioId); // Esta línea hay que revisarla cuando refactoricemos.
-    
+    detalleAnuncioController.mostrarAnuncio(anuncioId); // Esta línea hay que revisarla cuando refactoricemos.
+
 });

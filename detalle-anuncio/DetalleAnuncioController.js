@@ -11,8 +11,8 @@ export class TweetDetailController {
     this.tweet = null;
   }
 
-  async showTweet(tweetId) {
-    if (!tweetId) {
+  async mostrarAnuncio(anuncioId) {
+    if (!anuncioId) {
       pubSub.publish(
         pubSub.TOPICS.SHOW_ERROR_NOTIFICATION,
         "Id del tweet no válido"
