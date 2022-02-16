@@ -1,4 +1,5 @@
 import { NotificationController } from "../shared/notification/NotificationController.js";
+import { DetalleAnuncioController } from "./DetalleAnuncioController.js"
 
 document.addEventListener("DOMContentLoeaded", () => {
     const detalleAnuncioElement = document.querySelector(".detalle-anuncio");
@@ -14,6 +15,6 @@ document.addEventListener("DOMContentLoeaded", () => {
     const anuncioId = searchParams.get("id");
   
     const detalleAnuncioController = new DetalleAnuncioController(detalleAnuncioElement);
-    detalleAnuncioController.mostrarAnuncio(anuncioId); // Esta línea hay que revisarla cuando refactoricemos.
+    detalleAnuncioController.mostrarAnuncio(anuncioId);
 
 });

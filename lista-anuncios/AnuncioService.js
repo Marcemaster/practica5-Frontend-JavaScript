@@ -1,4 +1,4 @@
-import { signupService } from "../signup/SignupService";
+import { signupService } from "../signup/SignupService.js";
 
 export default {
   async getAnuncios() {

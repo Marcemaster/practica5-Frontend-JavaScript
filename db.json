@@ -1,128 +1,126 @@
 {
-  "users": [
-    {
-      "username": "user1",
-      "password": "$2b$10$kHJQqyYZu7G66Jli32s2Be2Uq.9ovFWzKki3jTfOEkmOBS0MCTCZW",
-      "id": 1
-    },
-    {
-      "username": "marce",
-      "password": "$2b$10$kHJQqyYZu7G66Jli32s2Be1KpTm/bvGQAr3o2ZwJseqGkjiuhyz2.",
-      "id": 2
-    },
-    {
-      "username": "cosi",
-      "password": "$2b$10$SaRQ7Sm620XUrE570D2GXeWpNOWS2gfq/Ux2TayvK.xvWlhvC0VH2",
-      "id": 3
-    }
-  ],
-  "anuncios": [
-    {
-      "nombre": "Pelota",
-      "venta": false,
-      "precio": 10,
-      "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
-      "foto": "http://localhost:3000/images/basket.jpg",
-      "tags": [
-        "lifestyle"
-      ]
-    },
-    {
-      "nombre": "Bicicleta",
-      "venta": true,
-      "precio": 230.15,
-      "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
-      "foto": "http://localhost:3000/images/bici.jpg",
-      "tags": [
-        "lifestyle",
-        "motor"
-      ]
-    },
-    {
-      "nombre": "Cascos",
-      "venta": false,
-      "precio": 35,
-      "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
-      "foto": "http://localhost:3000/images/cascos.jpg",
-      "tags": [
-        "mobile",
-        "work"
-      ]
-    },
-    {
-      "nombre": "Coche Fiat 500",
-      "venta": false,
-      "precio": 4500,
-      "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
-      "foto": "http://localhost:3000/images/coche.jpg",
-      "tags": [
-        "motor",
-        "work"
-      ]
-    },
-    {
-      "nombre": "Iphone",
-      "venta": false,
-      "precio": 100,
-      "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
-      "foto": "http://localhost:3000/images/iphone.jpg",
-      "tags": [
-        "work",
-        "mobile"
-      ]
-    },
-    {
-      "nombre": "Longboard",
-      "venta": false,
-      "precio": 150,
-      "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
-      "foto": "http://localhost:3000/images/longboard.jpg",
-      "tags": [
-        "lifestyle",
-        "motor"
-      ]
-    },
-    {
-      "nombre": "Máquina-de-Escribir",
-      "venta": true,
-      "precio": 75,
-      "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
-      "foto": "http://localhost:3000/images/maquina-escribir.jpg",
-      "tags": [
-        "lifestyle",
-        "work"
-      ]
-    },
-    {
-      "nombre": "Figura-Luffy",
-      "venta": false,
-      "precio": 9,
-      "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
-      "foto": "http://localhost:3000/images/one-piece.jpg",
-      "tags": [
-        "lifestyle"
-      ]
-    },
-    {
-      "nombre": "Peluches",
-      "venta": false,
-      "precio": 5,
-      "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
-      "foto": "http://localhost:3000/images/peluche.jpg",
-      "tags": [
-        "lifestyle"
-      ]
-    },
-    {
-      "nombre": "Portatil Macbook Pro",
-      "venta": false,
-      "precio": 2550,
-      "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
-      "foto": "http://localhost:3000/images/portatil.jpg",
-      "tags": [
-        "work",
-        "lifestyle"
-      ]
-    }
-  ]
+    "users": [
+        {
+            "username": "user1",
+            "password": "$2b$10$kHJQqyYZu7G66Jli32s2Be2Uq.9ovFWzKki3jTfOEkmOBS0MCTCZW",
+            "id": 1
+        },
+        {
+            "username": "marce",
+            "password": "$2b$10$kHJQqyYZu7G66Jli32s2Be1KpTm/bvGQAr3o2ZwJseqGkjiuhyz2.",
+            "id": 2
+        },
+        {
+            "username": "cosi",
+            "password": "$2b$10$SaRQ7Sm620XUrE570D2GXeWpNOWS2gfq/Ux2TayvK.xvWlhvC0VH2",
+            "id": 3
+        },
+        {
+            "username": "marcelo",
+            "password": "$2b$10$SaRQ7Sm620XUrE570D2GXeqRu51vJoGmMCBCXPxx/gKbgYcwtFW/e",
+            "id": 4
+        }
+    ],
+    "anuncios": [
+        {
+            "id": 1,
+            "userId": 1,
+            "nombre": "Pelota",
+            "venta": false,
+            "precio": 10,
+            "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
+            "foto": "https://cdn.pixabay.com/photo/2016/11/18/22/10/man-1837119_960_720.jpg",
+            "tags": ["lifestyle"]
+        },
+        {
+            "id": 2,
+            "userId": 1,
+            "nombre": "Bicicleta",
+            "venta": true,
+            "precio": 230.15,
+            "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
+            "foto": "https://cdn.pixabay.com/photo/2015/05/28/22/29/bicycle-788733_960_720.jpg",
+            "tags": ["lifestyle", "motor"]
+        },
+        {
+            "id": 3,
+            "userId": 1,
+            "nombre": "Cascos",
+            "venta": false,
+            "precio": 35,
+            "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
+            "foto": "https://cdn.pixabay.com/photo/2019/11/02/01/15/headphones-4595492_960_720.jpg",
+            "tags": ["mobile", "work"]
+        },
+        {
+            "id": 4,
+            "userId": 2,
+            "nombre": "Coche Fiat 500",
+            "venta": false,
+            "precio": 4500,
+            "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
+            "foto": "https://cdn.pixabay.com/photo/2019/06/25/13/06/fiat-4298163_960_720.jpg",
+            "tags": ["motor", "work"]
+        },
+        {
+            "id": 5,
+            "userId": 2,
+            "nombre": "Iphone",
+            "venta": false,
+            "precio": 100,
+            "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
+            "foto": "https://cdn.pixabay.com/photo/2014/08/05/10/27/iphone-410311_960_720.jpg",
+            "tags": ["work", "mobile"]
+        },
+        {
+            "id": 6,
+            "userId": 3,
+            "nombre": "Longboard",
+            "venta": false,
+            "precio": 150,
+            "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
+            "foto": "https://cdn.pixabay.com/photo/2014/07/31/00/34/skateboard-405894_960_720.jpg",
+            "tags": ["lifestyle", "motor"]
+        },
+        {
+            "id": 7,
+            "userId": 3,
+            "nombre": "Máquina-de-Escribir",
+            "venta": true,
+            "precio": 75,
+            "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
+            "foto": "https://cdn.pixabay.com/photo/2019/09/26/16/30/typewriter-4506393_960_720.jpg",
+            "tags": ["lifestyle", "work"]
+        },
+        {
+            "id": 8,
+            "userId": 3,
+            "nombre": "Figura-Luffy",
+            "venta": false,
+            "precio": 9,
+            "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
+            "foto": "https://cdn.pixabay.com/photo/2018/10/28/13/50/luffy-3778854_960_720.jpg",
+            "tags": ["lifestyle"]
+        },
+        {
+            "id": 9,
+            "userId": 3,
+            "nombre": "Peluche",
+            "venta": false,
+            "precio": 5,
+            "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
+            "foto": "https://cdn.pixabay.com/photo/2018/08/11/22/53/teddy-bear-3599680_960_720.jpg",
+            "tags": ["lifestyle"]
+        },
+        {
+            "id": 10,
+            "userId": 3,
+            "nombre": "Portatil Macbook Pro",
+            "venta": false,
+            "precio": 2550,
+            "descripcion": "Lorem ipsum dolor sit, amet consectetur In porro at incidunt natus eaque veniam totam consectetur recusandae a itaque quasi facere sint sunt architecto, similique ut.",
+            "foto": "https://cdn.pixabay.com/photo/2014/09/24/14/29/macbook-459196_960_720.jpg",
+            "tags": ["work", "lifestyle"]
+        }
+    ]
 }

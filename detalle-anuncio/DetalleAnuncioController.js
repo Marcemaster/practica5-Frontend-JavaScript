@@ -1,30 +1,30 @@
 import { pubSub } from "../shared/pubSub.js";
-import { signupService } from "../signup/SignupService.js";
+import { signupService } from "../signup/SignupService.js"
 import { decodeToken } from "../utils/decodeToken.js";
 
-import TweetService from "../tweet-list/TweetService.js"; // REFACTORIZAR
-import { buildTweetDetailView } from "../tweet-list/TweetView.js"; // REFACTORIZAR
+import AnuncioService from "../lista-anuncios/AnuncioService.js";
+import { buildAnuncioDetailView } from "../lista-anuncios/AnuncioView.js";
 
-export class TweetDetailController {
-  constructor(tweetDetailElement) {
-    this.tweetDetailElement = tweetDetailElement;
-    this.tweet = null;
+export class DetalleAnuncioController {
+  constructor(anuncioDetailElement) {
+    this.anuncioDetailElement = anuncioDetailElement;
+    this.anuncio = null;
   }
 
   async mostrarAnuncio(anuncioId) {
     if (!anuncioId) {
       pubSub.publish(
         pubSub.TOPICS.SHOW_ERROR_NOTIFICATION,
-        "Id del tweet no válido"
+        "Id del anuncio no válido"
       );
 
       return;
     }
 
     try {
-      this.tweet = await TweetService.getTweet(tweetId);
-      const tweetTemplate = buildTweetDetailView(this.tweet);
-      this.tweetDetailElement.innerHTML = tweetTemplate;
+      this.anuncio = await AnuncioService.getAnuncio(anuncioId);
+      const anuncioTemplate = buildAnuncioDetailView(this.anuncio);
+      this.anuncioDetailElement.innerHTML = anuncioTemplate;
 
       this.handleDeleteButton();
     } catch (error) {
@@ -39,8 +39,8 @@ export class TweetDetailController {
       // decodificamos token
       const userInfo = decodeToken(loggedUserToken);
 
-      // comprobamos si el id de usuario logado es el mismo que el id del creador del tweet
-      const isOwner = this.isTweetOwner(userInfo.userId);
+      // comprobamos si el id de usuario logado es el mismo que el id del creador del anuncio
+      const isOwner = this.isOwner(userInfo.user.id);
       console.log(isOwner);
 
       // pintamos botón
@@ -50,27 +50,27 @@ export class TweetDetailController {
     }
   }
 
-  isTweetOwner(userId) {
-    return userId === this.tweet.userId;
+  isOwner(userId) {
+    return userId === this.anuncio.userId; 
   }
 
   drawDeleteButton() {
     const buttonElement = document.createElement("button");
-    buttonElement.textContent = "Borrar Tweet";
+    buttonElement.textContent = "Borrar Anuncio";
 
-    this.tweetDetailElement.appendChild(buttonElement);
+    this.anuncioDetailElement.appendChild(buttonElement);
 
-    this.tweetDetailElement.addEventListener("click", () => {
-      this.deleteTweet();
+    this.anuncioDetailElement.addEventListener("click", () => {
+      this.deleteAnuncio();
     });
   }
 
-  async deleteTweet() {
-    const shouldDelete = window.confirm("Estás seguro de borrar el tweet?");
+  async deleteAnuncio() {
+    const shouldDelete = window.confirm("¿Estás seguro de borrar el anuncio?");
 
     if (shouldDelete) {
       try {
-        await TweetService.deleteTweet(this.tweet.id);
+        await AnuncioService.deleteAnuncio(this.anuncio.id);
         window.location.href = "/";
       } catch (error) {
         // utilizamos pubsub
