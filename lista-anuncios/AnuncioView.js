@@ -10,11 +10,30 @@ export function buildAnuncioView(anuncio) {
 
 export function buildAnuncioDetailView(anuncio) {
 
+  let venta = ""
+  let foto = ""
+
+  if (anuncio.venta) {
+    venta = "En venta"
+  } else {
+    venta = "Se busca"
+  }
+
+  if (anuncio.foto) {
+    foto = anuncio.foto
+  } else {
+    foto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNK7-n-r_w_qCEIjsnu8VXMBamUkSmLUr9Eg&usqp=CAU"
+  }
+
+
   let anuncioTemplate = `
-    <h1>Nombre del producto: ${anuncio.nombre}</h1>
-    <p>Precio: ${anuncio.precio}</p>
-    <p>Descripción: ${anuncio.descripcion}</p>
-    <img src="${anuncio.foto}"></img> 
+    <div class="anuncio">
+    <h3>${anuncio.nombre}</h3>
+    <li>Precio: ${anuncio.precio} €</li>
+    <li>Estado: ${venta}</li>
+    <li>Descripción: ${anuncio.descripcion}</li>
+    <li><img src="${foto}"></img></li>
+    </div>
     `;
 
   return anuncioTemplate;

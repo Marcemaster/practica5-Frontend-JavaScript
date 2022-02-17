@@ -1,0 +1,71 @@
+:root {
+    --main-color: #3AEAC3 ;
+  }
+
+
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h3 {
+    margin-left: 1rem;
+    color: black;
+}
+
+.lista-anuncios {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    scroll-behavior: smooth;
+    justify-content: space-evenly;
+}
+
+.anuncio {
+    border: solid 1px var(--main-color);
+    border-radius: 8px;
+    width: 300px;
+    height: fit-content;
+}
+
+.anuncio:hover {
+    border: solid 2px var(--main-color);
+    border-radius: 8px;
+}
+
+.anuncio:hover > h3 {
+    text-decoration: underline var(--main-color);
+    text-decoration-thickness: 2px;
+
+}
+
+a {
+    text-decoration: none;
+    color: black
+}
+
+li {
+    list-style: none;
+    margin-left: 0.5rem;
+    margin-bottom: 10px;
+}
+
+li span {
+    font-weight: bold;
+}
+
+img {
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    margin-left: 10%;
+    margin-top: 5px;
+    bottom: 0;
+    right: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
