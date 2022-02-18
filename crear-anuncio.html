@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./shared/notification/notification.css">
     <link rel="stylesheet" href="styles.css">
-    <title>Signup</title>
+    <title>Crear Anuncio</title>
 </head>
 <body>
     <section class="notification"></section>
+    <h1>Nuevo anuncio</h1>
     <form class="formulario-nuevo">
       <div>
         <label for="nombre">Nombre del producto: </label>
@@ -17,9 +18,9 @@
       </div>
       <div>
         <p>Estado:</p>
-        <input type="radio" name="estado" id="Se busca" value=false/>
+        <input type="radio" name="venta" id="Se busca" value=false />
         <label for="Se busca">Se busca</label>
-        <input type="radio" name="estado" id="Se vende" value=true/>
+        <input type="radio" name="venta" id="Se vende" value=true />
         <label for="Se vende">Se vende</label>
       </div>
 
@@ -33,14 +34,15 @@
         <input type="text" name="descripcion" size="50" required />
       </div>
       <div>
-        <label for="descripcion">Imagen (Url): </label>
-        <input type="text" name="descripcion" size="50"  />
+        <label for="foto">Imagen (Url): </label>
+        <input type="text" name="foto" size="50"  />
       </div>
       
       <button type="submit" disabled>Crear anuncio</button>
     </form>
 
 
+    <script type="module" src="./crear-anuncio/crearAnuncio.js"></script>
     <script type="module" src="./crear-anuncio/crearAnuncio.js"></script>
 </body>
 </html>

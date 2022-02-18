@@ -16,5 +16,4 @@ document.addEventListener("DOMContentLoeaded", () => {
   
     const detalleAnuncioController = new DetalleAnuncioController(detalleAnuncioElement);
     detalleAnuncioController.mostrarAnuncio(anuncioId);
-
 });

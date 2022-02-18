@@ -40,7 +40,7 @@ export default {
     }
 
     if (!response.ok) {
-      throw new Error("Anuncio no encontrados");
+      throw new Error("Anuncio no encontrado");
     }
 
     try {
@@ -51,6 +51,7 @@ export default {
 
     return anuncio;
   },
+  
   async borrarAnuncio(anuncioId) {
     const url = `http://localhost:8000/api/anuncios/${anuncioId}`;
 

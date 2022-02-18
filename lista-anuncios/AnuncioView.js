@@ -25,7 +25,6 @@ export function buildAnuncioDetailView(anuncio) {
     foto = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNK7-n-r_w_qCEIjsnu8VXMBamUkSmLUr9Eg&usqp=CAU"
   }
 
-
   let anuncioTemplate = `
     <div class="anuncio">
     <h3>${anuncio.nombre}</h3>
