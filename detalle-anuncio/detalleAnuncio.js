@@ -1,6 +1,6 @@
 import { NotificationController } from "../shared/notification/NotificationController.js";
 import { DetalleAnuncioController } from "./DetalleAnuncioController.js"
-
+import {handleLoggedUser} from "../shared/loggedUser/loggedUser.js"
 
 document.addEventListener("DOMContentLoaded", () => {
     const detalleAnuncioElement = document.querySelector(".detalle-anuncio");
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     const searchParams = new URLSearchParams(window.location.search);
-    const anuncioId = searchParams.get("id");
     const detalleAnuncioController = new DetalleAnuncioController(detalleAnuncioElement);
-    detalleAnuncioController.mostrarAnuncio(anuncioId);
+    detalleAnuncioController.mostrarAnuncio(searchParams.get("id"));
+    handleLoggedUser()
 });

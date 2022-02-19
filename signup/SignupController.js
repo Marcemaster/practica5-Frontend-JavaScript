@@ -101,6 +101,8 @@ export class SignupController {
       pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, error);
     }
   }
+
+
 }
 
 /**
