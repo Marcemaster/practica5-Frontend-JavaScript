@@ -5,13 +5,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./shared/notification/notification.css">
+        <link rel="stylesheet" href="./shared/spinner/spinner.css">
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="navbar.css">
+
         <title>Nodepop</title>
     </head>
     <body>
+        <header>
+            <nav class="topnav" id="myTopnav">
+                    <a href="/">Inicio</a>
+                    <a href="/login.html">Iniciar sesión</a>
+                    <a href="/signup.html">Registro</a>
+            </nav>
+        </header>
         <main>
             <div class="notification"></div>
-            <section class="lista-anuncios">Lista de anuncios</section>
+            <section class="lista-anuncios"></section>
         </main>
         <script type="module" src="./lista-anuncios/index.js"></script>
     </body>

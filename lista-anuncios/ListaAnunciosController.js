@@ -2,7 +2,7 @@ import { pubSub } from "../shared/pubSub.js";
 import AnuncioService from "./AnuncioService.js";
 import {
   buildAnuncioView,
-  buildListaAnunciosSpinnerView,
+  buildSpinnerView,
   buildNotFoundAnuncioView,
 } from "./AnuncioView.js";
 
@@ -16,8 +16,7 @@ export class ListaAnunciosController {
 
   async mostrarAnuncios() {
     let anuncios;
-    const spinnerTemplate = buildListaAnunciosSpinnerView();
-
+    const spinnerTemplate = buildSpinnerView();
     this.anuncioListElement.innerHTML = spinnerTemplate;
 
     try {
@@ -36,7 +35,6 @@ export class ListaAnunciosController {
         this.anuncioListElement.appendChild(anuncioArticleElement);
       }
     } catch (error) {
-      // informar de error
       pubSub.publish(
         pubSub.TOPICS.SHOW_ERROR_NOTIFICATION,
         "Error obteniendo anuncios"
@@ -44,6 +42,7 @@ export class ListaAnunciosController {
 
     } finally {
       const loader = this.anuncioListElement.querySelector(".loader");
+      console.log(loader)
       loader.remove();
     }
   }

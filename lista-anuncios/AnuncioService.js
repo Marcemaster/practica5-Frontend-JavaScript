@@ -1,77 +1,78 @@
 import { signupService } from "../signup/SignupService.js";
 
 export default {
-  async getAnuncios() {
-    const url = "http://localhost:8000/api/anuncios";
-    const badUrl = "https://hds.hel.fi/static/assets/placeholders/image/image-m@3x.png";
+    async getAnuncios() {
+        const url = "http://localhost:8000/api/anuncios";
+        const badUrl =
+            "https://hds.hel.fi/static/assets/placeholders/image/image-m@3x.png";
 
-    let response;
-    let anuncios;
+        let response;
+        let anuncios;
 
-    try {
-      response = await fetch(url);
-    } catch (error) {
-      throw new Error("No he podido ir a por los anuncios");
-    }
+        try {
+            response = await fetch(url);
+        } catch (error) {
+            throw new Error("No he podido ir a por los anuncios");
+        }
 
-    if (!response.ok) {
-      throw new Error("Anuncios no encontrados");
-    }
+        if (!response.ok) {
+            throw new Error("Anuncios no encontrados");
+        }
 
-    try {
-      anuncios = await response.json();
-    } catch (error) {
-      throw new Error("No he podido transformar la respuesta a json");
-    }
+        try {
+            anuncios = await response.json();
+        } catch (error) {
+            throw new Error("No he podido transformar la respuesta a json");
+        }
 
-    return anuncios;
-  },
-  
-  async getAnuncio(anuncioId) {
-    const url = `http://localhost:8000/api/anuncios/${anuncioId}`;
+        return anuncios;
+    },
 
-    let response;
-    let anuncio;
+    async getAnuncio(anuncioId) {
+        const url = `http://localhost:8000/api/anuncios/${anuncioId}`;
 
-    try {
-      response = await fetch(url);
-    } catch (error) {
-      throw new Error("No he podido ir a por el anuncio");
-    }
+        let response;
+        let anuncio;
 
-    if (!response.ok) {
-      throw new Error("Anuncio no encontrado");
-    }
+        try {
+            response = await fetch(url);
+        } catch (error) {
+            throw new Error("No he podido ir a por el anuncio");
+        }
 
-    try {
-      anuncio = await response.json();
-    } catch (error) {
-      throw new Error("No he podido transformar la respuesta a json");
-    }
+        if (!response.ok) {
+            throw new Error("Anuncio no encontrado");
+        }
 
-    return anuncio;
-  },
-  
-  async borrarAnuncio(anuncioId) {
-    const url = `http://localhost:8000/api/anuncios/${anuncioId}`;
+        try {
+            anuncio = await response.json();
+        } catch (error) {
+            throw new Error("No he podido transformar la respuesta a json");
+        }
 
-    let response;
+        return anuncio;
+    },
 
-    try {
-      response = await fetch(url, {
-        method: "DELETE",
-        headers: {
-          Authorization: "Bearer " + signupService.getLoggedUser(),
-        },
-      });
-    } catch (error) {
-      throw new Error("No he podido borrar el anuncio");
-    }
+    async borrarAnuncio(anuncioId) {
+        const url = `http://localhost:8000/api/anuncios/${anuncioId}`;
 
-    if (!response.ok) {
-      throw new Error("Anuncio no encontrado");
-    }
-  }  
+        let response;
+
+        try {
+            response = await fetch(url, {
+                method: "DELETE",
+                headers: {
+                    Authorization: "Bearer " + signupService.getLoggedUser(),
+                },
+            });
+        } catch (error) {
+            throw new Error("No he podido borrar el anuncio");
+        }
+
+        if (!response.ok) {
+            throw new Error("Anuncio no encontrado");
+        }
+    },
 };
 
 /*

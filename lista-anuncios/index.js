@@ -13,3 +13,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const listaAnunciosController = new ListaAnunciosController(anuncioListElement);
   await listaAnunciosController.mostrarAnuncios();
 });
+
+// Esto es lo que tengo que crear en el NAV cuando está loggueado
+// <a href="/crear-anuncio.html">Crear Anuncio</a>

@@ -38,7 +38,7 @@ export function buildAnuncioDetailView(anuncio) {
   return anuncioTemplate;
 }
 
-export function buildListaAnunciosSpinnerView() {
+export function buildSpinnerView() {
   return `<div class="loader">
     <div></div>
     <div></div>
@@ -49,6 +49,6 @@ export function buildListaAnunciosSpinnerView() {
 
 export function buildNotFoundAnuncioView() {
   return `
-    <h1>Ooops!!! no hay ningún anuncio!!! =(</h1>
+    <h1>No hay anuncios, crea el primero.</h1>
   `;
 }

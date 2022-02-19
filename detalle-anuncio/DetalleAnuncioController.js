@@ -1,8 +1,8 @@
 import { pubSub } from "../shared/pubSub.js";
-import { signupService } from "../signup/SignupService.js";
+// import { signupService } from "../signup/SignupService.js";
 import AnuncioService from "../lista-anuncios/AnuncioService.js";
 import { buildAnuncioDetailView } from "../lista-anuncios/AnuncioView.js";
-import { decodeToken } from "../utils/decodeToken.js";
+// import { decodeToken } from "../utils/decodeToken.js";
 
 export class DetalleAnuncioController {
   constructor(detalleAnuncioElement) {
