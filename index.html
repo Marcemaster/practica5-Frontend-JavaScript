@@ -21,6 +21,7 @@
         </header>
         <main>
             <div class="notification"></div>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscador de anuncios">
             <section class="lista-anuncios"></section>
         </main>
         <script type="module" src="./lista-anuncios/index.js"></script>
@@ -28,6 +29,23 @@
             function logOut() {
                 localStorage.clear()
             }
+
+            function myFunction() {
+                let input, filter, ul, li, a, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                li = document.getElementsByTagName("h3");
+
+                // Loop through all list items, and hide those who don't match the search query
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].innerHTML;
+                    if (a.toUpperCase().indexOf(filter) > -1) {
+                    li[i].parentElement.style.display = "";
+                    } else {
+                    li[i].parentElement.style.display = "none";
+                    }
+                }
+        }
         </script>
     </body>
 </html>

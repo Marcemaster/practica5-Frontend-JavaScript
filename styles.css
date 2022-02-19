@@ -68,3 +68,11 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+#myInput {
+    border: solid 2px var(--main-color);
+    border-radius: 3px;
+    width: 50%;
+    margin-bottom: 1rem;
+}
+
