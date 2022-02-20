@@ -1,0 +1,9 @@
+.anuncio:hover {
+    border: solid 2px var(--main-color);
+    border-radius: 8px;
+}
+
+.anuncio:hover > h3 {
+    text-decoration: underline var(--main-color);
+    text-decoration-thickness: 2px;
+}

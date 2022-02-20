@@ -1,5 +1,4 @@
 import { pubSub } from "../shared/pubSub.js";
-import { signupService } from "../signup/SignupService.js";
 import AnuncioService from "../lista-anuncios/AnuncioService.js";
 import { buildAnuncioDetailView } from "../lista-anuncios/AnuncioView.js";
 import { decodeToken } from "../utils/decodeToken.js";
@@ -58,10 +57,12 @@ export class DetalleAnuncioController {
     drawDeleteButton() {
         const buttonElement = document.createElement("button");
         buttonElement.textContent = "Borrar Anuncio";
+        const anuncioElement = document.querySelector(".anuncio")
+        anuncioElement.appendChild(buttonElement);
+        const botonBorrar = document.querySelector("button")
+        botonBorrar.classList.add("btn","btn-primary","btn-block","btn-large")
 
-        this.detalleAnuncioElement.appendChild(buttonElement);
-
-        this.detalleAnuncioElement.addEventListener("click", () => {
+        botonBorrar.addEventListener("click", () => {
             this.borrarAnuncio();
         });
     }
