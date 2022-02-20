@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="./shared/notification/notification.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="./shared/spinner/spinner.css">
+    <link rel="stylesheet" href="navbar.css">
+
 
     <title>Crear Anuncio</title>
 </head>
@@ -47,11 +49,15 @@
         <input type="text" name="foto" size="50"  />
       </div>
       
-      <button type="submit" disabled>Crear anuncio</button>
+      <button type="submit">Crear anuncio</button>
     </form>
 
 
     <script type="module" src="./crear-anuncio/crearAnuncio.js"></script>
-    <script type="module" src="./crear-anuncio/crearAnuncio.js"></script>
+    <script>
+      function logOut() {
+          localStorage.clear()
+      }
+  </script>
 </body>
 </html>

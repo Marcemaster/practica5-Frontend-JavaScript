@@ -1,30 +1,25 @@
 class CrearAnuncioService {
   constructor() {}
 
-  async crearAnuncio(formData) {
+  async crearAnuncio(nombre, venta, precio, descripcion, foto) {
     const body = {
-      nombre: formData.get("nombre"),
-      venta: formData.get("venta"),
-      precio: formData.get("precio"),
-      foto:
-        formData.get("foto") ||
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNK7-n-r_w_qCEIjsnu8VXMBamUkSmLUr9Eg&usqp=CAU",
-      descripcion: formData.get("descripcion"),
+      nombre,
+      venta,
+      precio,
+      descripcion,
+      foto,
     };
-
-    // El body sale bien hasta aquí.
 
     const response = await fetch("http://localhost:8000/api/anuncios", {
       method: "POST",
       body: JSON.stringify(body),
       headers: {
+        "Content-Type": "application/json",
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       },
     });
 
     const data = await response.json();
-
-    // La respuesta da un 201 (OK)
 
     if (!response.ok) {
       throw new Error(data.message);

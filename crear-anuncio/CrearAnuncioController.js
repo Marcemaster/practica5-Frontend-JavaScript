@@ -6,53 +6,27 @@ export class CrearAnuncioController {
   constructor(formElement) {
     this.formElement = formElement;
 
-    this.subscribeToEvents();
-  }
-
-  subscribeToEvents() {
-    this.onAnyInputChange();
     this.onSubmitForm();
   }
 
-  onAnyInputChange() {
-    const inputElements = Array.from(
-      this.formElement.querySelectorAll("input")
-    );
-
-    inputElements.forEach((inputElement) => {
-      inputElement.addEventListener("input", () => {
-        const areInputsFilled = inputElements.every(
-          (inputElement) => inputElement.value
-        );
-
-        if (areInputsFilled) {
-          this.formElement.querySelector("button").removeAttribute("disabled");
-        } else {
-          this.formElement.querySelector("button").setAttribute("disabled", "");
-        }
-      });
-    });
-  }
-
   onSubmitForm() {
-    this.formElement.addEventListener("submit", (event) => {
+    this.formElement.addEventListener("submit", async (event) => {
       event.preventDefault();
 
       const formData = new FormData(this.formElement);
 
-      this.crearAnuncio(formData)
+      const nombre = formData.get("nombre")
+      const venta = formData.get("venta")
+      const precio = formData.get("precio")
+      const descripcion = formData.get("descripcion")
+      const foto = formData.get("foto") || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNK7-n-r_w_qCEIjsnu8VXMBamUkSmLUr9Eg&usqp=CAU"
+
+      try {
+        crearAnuncioService.crearAnuncio(nombre, venta, precio, descripcion, foto);
+        window.location.href = "/";
+      } catch (error) {
+        pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, error);
+      }
     });
-  }
-
-  async crearAnuncio(formData) {
-    try {
-      await crearAnuncioService.crearAnuncio(formData);
-
-      // console.log("Anuncio creado correctamente"); 
-      window.location.href = "/";  
-    } catch (error) {
-      pubSub.publish(pubSub.TOPICS.SHOW_ERROR_NOTIFICATION, error);
-      console.log("Ha habido un error");
-    }
   }
 }
