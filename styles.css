@@ -27,6 +27,11 @@ h3 {
     height: fit-content;
 }
 
+.formulario-nuevo > div {
+    margin: 1rem;
+    font-weight: bold;
+}
+
 a {
     text-decoration: none;
     color: black

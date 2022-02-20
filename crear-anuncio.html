@@ -22,13 +22,12 @@
     </header>
     <section class="notification"></section>
     <h1>Nuevo anuncio</h1>
-    <form class="formulario-nuevo">
+    <form class="formulario-nuevo anuncio">
       <div>
         <label for="nombre">Nombre del producto: </label>
         <input type="text" name="nombre" required />
       </div>
       <div>
-        <p>Estado:</p>
         <input type="radio" name="venta" id="Se busca" value=false />
         <label for="Se busca">Se busca</label>
         <input type="radio" name="venta" id="Se vende" value=true />
@@ -37,7 +36,7 @@
 
       <div>
         <label for="precio">Precio: </label>
-        <input type="number" name="precio" required />
+        <input type="number" name="precio" placeholder="€"required />
       </div>
 
       <div>
@@ -49,7 +48,7 @@
         <input type="text" name="foto" size="50"  />
       </div>
       
-      <button type="submit">Crear anuncio</button>
+      <button class="btn btn-primary btn-block btn-large" type="submit">Crear anuncio</button>
     </form>
 
 
